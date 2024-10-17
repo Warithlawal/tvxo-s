@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TVXO - Product Page</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/127aef0c53.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-462758aa1e172f82d39e1ea35e919e0a.css?vsn=d"
+    >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
+      >
+</head>
+<body>
+	<nav>
+		<a href="index.html"><img class="logo-img" src="images/tvxo.png"></a>
+
+		
+		<div class="home">
+            <a class="cart" href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+        <p class="cart-number">0</p>
+
+        </div>
+	</nav>
+
+	<section>
+		<div class="product-page">
+    <div class="product-img-review-container">
+        <div class="product-img-review">
+            <img id="main-product-img" src="" alt="">
+        </div>
+        <div class="product-img-grid" id="thumbnail-container"></div>
+    </div>
+    <div class="product-info">
+        <h1 id="product-name"></h1>
+        <p id="product-price"></p>
+        <div class="size select-wrapper">
+            <label>Size</label>
+            <select id="size-select">
+                <option value="small">S</option>
+                <option value="medium">M</option>
+                <option value="large">L</option>
+                <option value="extra large">XL</option>
+            </select>
+        </div>
+        <div class="quantity-container">
+            <p>Quantity</p>
+            <div class="quantity">
+                <div class="sub">-</div>
+                <div id="quantity">1</div>
+                <div class="add">+</div>
+            </div>
+        </div>
+				<button class="add-to-cart" id="add-to-cart">Add to cart</button>
+                <div id="cart-message"></div>
+
+				<button class="but-now">Buy it now</button>
+			</div>
+
+			<div>
+				<div></div>
+			</div>
+		</div>
+	</section>
+</body>
+<script src="cart.js"></script>
+<script src="products.js"></script>
+<script src="product-page.js"></script>
+
+
+</html>
