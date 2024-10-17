@@ -637,3 +637,10 @@ footer {
 	text-align: center;
 	margin: 10px;
 }
+
+
+@media (max-width: 480px) { /* Adjust breakpoint as needed */
+	.products {
+		grid-template-columns: repeat(2, 1fr); /* Display 2 columns */
+	}
+}
