@@ -33,7 +33,7 @@ homeProducts.forEach((homeProducts) => {
 			</div>
 			<div class="product-details-spacing">
 				<p>${homeProducts.name}</p>
-				<h3>NGN${homeProducts.price}</h3>
+				
 			</div>
 		</div>
 	`;

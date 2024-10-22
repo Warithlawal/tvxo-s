@@ -148,7 +148,7 @@ const allProducts =  [{
     image1: 'images/Summercation4.jpg',
     image2: 'images/Summercation1.jpg',
     image3: 'images/Summercation2.jpg',
-    price: 600000,
+    price: 60000,
     category: 'shirts'
   },
   {
@@ -188,35 +188,35 @@ const allProducts =  [{
     image2: 'images/Hoodie2.jpg',
     image3: 'images/Hoodie3.jpg',
     image4: 'images/Hoodie4.jpg',
-    price: 650000,
+    price: 65000,
     category: 'hoodie'
   },
   {
     id: 24,
     name: 'Slides Green',
     image1: 'images/DSC01564-Edit.jpg',
-    price: 700000,
+    price: 70000,
     category: 'slides'
   },
   {
     id: 25,
     name: 'Slides Black',
     image1: 'images/DSC01554-Edit.jpg',
-    price: 700000,
+    price: 70000,
     category: 'slides'
   },
   {
     id: 26,
     name: 'Slides Beige',
     image1: 'images/DSC01572-Edit.jpg',
-    price: 700000,
+    price: 70000,
     category: 'slides'
   },
   {
     id: 27,
     name: 'Slides Brown',
     image1: 'images/DSC01538-Edit.jpg',
-    price: 700000,
+    price: 70000,
     category: 'slides'
   },
   {
