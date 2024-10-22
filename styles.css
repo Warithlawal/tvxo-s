@@ -212,6 +212,51 @@ nav input {
 	animation: bounce 1s ease infinite;
 }
 
+.wrapper {
+	width: 90%;
+	max-width: 14000px;
+	margin-inline: auto;
+	position: relative;
+	height: 50px;
+	margin: 40px auto;
+	overflow: hidden;
+}
+
+@keyframes scrollRight {
+
+	to {
+		left: -300px;
+	}
+}
+
+.item {
+	width: 300px;
+	height: 100px;
+	letter-spacing: 10px;
+	position: absolute;
+	left: 100%; 
+	animation-name: scrollRight;
+	animation-duration: 20s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	text-align: center;
+	font-size: 20px;
+	font-family: "Moo Lah Lah", sans-serif;
+}
+
+.item1 {
+	animation-delay: calc(20s / 4 * (4 - 1) * -1);
+}
+.item2 {
+	animation-delay: calc(20s / 4 * (4 - 2) * -1);
+}
+.item3 {
+	animation-delay: calc(20s / 4 * (4 - 3) * -1);
+}
+.item4 {
+	animation-delay: calc(20s / 4 * (4 - 4) * -1);
+}
+
 .slides-container {
     display: flex;
     flex-direction: column;
@@ -701,8 +746,13 @@ footer {
 }
 
 
-@media (max-width: 480px) { /* Adjust breakpoint as needed */
+@media (max-width: 480px) {
 	.products {
 		grid-template-columns: repeat(2, 1fr); /* Display 2 columns */
+	}
+
+	.shop-now-positioning {
+		bottom: 150px;
+		left: 100px;
 	}
 }

@@ -113,7 +113,7 @@ const allProducts =  [{
   },
   {
     id: 15,
-    name: 'TVXO trucker Hat',
+    name: 'TVXO Trucker Hat',
     image1: 'images/Cap1.jpg',
     image2: 'images/Cap2.jpg',
     image3: 'images/Cap3.jpg',
@@ -122,7 +122,7 @@ const allProducts =  [{
   },
   {
     id: 21,
-    name: 'TVXO trucker Hat',
+    name: 'TVXO Trucker Hat',
     image1: 'images/Motivate-cap-brown.jpg',
     price: 20000,
     category: 'headwear'
