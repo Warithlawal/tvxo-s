@@ -95,7 +95,7 @@ const allProducts =  [{
   },
   {
     id: 10,
-    name: 'Parsely Denim',
+    name: 'TVXO Parsely Denim',
     image2: 'images/parsley-denim.jpg',
     image1: 'images/Parsley.jpg',
     image3: 'images/IMG_8216-Edit-2-Edit.jpg',
@@ -113,7 +113,7 @@ const allProducts =  [{
   },
   {
     id: 15,
-    name: 'TVXO Cap',
+    name: 'TVXO trucker Hat',
     image1: 'images/Cap1.jpg',
     image2: 'images/Cap2.jpg',
     image3: 'images/Cap3.jpg',
@@ -122,7 +122,7 @@ const allProducts =  [{
   },
   {
     id: 21,
-    name: 'TVXO Cap',
+    name: 'TVXO trucker Hat',
     image1: 'images/Motivate-cap-brown.jpg',
     price: 20000,
     category: 'headwear'

@@ -1,6 +1,6 @@
 const homeProducts = [{
 	id: 1,
-    name: 'TVXO Motivated Red',
+    name: 'TTVXO trucker Hat',
     image: 'images/Cap1.jpg',
     price: 60000
   },
