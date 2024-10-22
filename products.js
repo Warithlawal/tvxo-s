@@ -236,7 +236,7 @@ function generateProductCard(product) {
                 </div>
                 <div class="product-details-spacing">
                     <p>${product.name}</p>
-                    <h3>#${product.price}</h3>
+                    <h3>NGN${product.price.toLocaleString()}</h3>
                 </div>
             </a>
         </div>

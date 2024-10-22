@@ -356,6 +356,7 @@ main {
 	max-width: 700px;
 	margin: 40px auto 30px;
 	text-align: center;
+	align-items: center;
 	justify-content: center;
 }
 
@@ -389,31 +390,35 @@ main {
 	text-align: center;
 }
 
+.product-main {
+	
+}
+
 .product-page {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 50px;
-	margin: 10px auto;
-	width: 1000px;
+	margin: 10px 0;
+	gap: 10px;
 }
 
 .product-img-review-container {
 	display: flex;
 	flex-direction: column;
-	max-width: 500px;
+	max-width: 400px;
 	gap: 10px;
+	margin: 0 auto;
 }
 
 .product-img-review img {
 	width: 100%;
-	height: 600px;
+	height: 500px;
 	object-fit: cover;
 }
 
 .product-img-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	width: 500px;
+	width: 100%;
 	gap: 10px;
 }
 
@@ -427,6 +432,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	max-width: 100%;
 }
 
 .size,
@@ -514,7 +520,9 @@ select {
 }
 
 .align-right {
+	display: grid;
 	text-align: right;
+	align-items: center;
 }
 
 .quantity-container-cart {
@@ -544,11 +552,8 @@ select {
 }
 
 .cart-image {
-	width: 120px;
+	width: 150px;
 	height: 150px;
-	padding: 10px;
-	display: flex;
-	border-radius: 5px;
 }
 
 .cart-image img {
@@ -568,6 +573,7 @@ select {
 .productandquantity {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .productandquantitylabel {
@@ -578,13 +584,14 @@ select {
 .cart-product {
 	display: flex;
 	gap: 20px;
+	align-items: center;
 }
 
 .cart-content {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-
+	font-size: 14px;
 }
 
 .cart-cover {
@@ -636,6 +643,60 @@ select {
 footer {
 	text-align: center;
 	margin: 10px;
+}
+
+@media (max-width: 900px) {
+	.product-img-review-container {
+		width: 100%;
+	}
+
+	.product-img-grid {
+		width: 100%;
+	}
+
+	.product-img-grid img {
+		height: 150px;
+	}
+}
+
+@media (max-width: 780px) {
+	.product-page {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+}
+
+	@media only screen and (max-width: 600px) {
+		.align-right {
+			text-align: right;
+			align-items: normal;
+			
+		}
+
+		.cart-label .align-left-quantity {
+			display: none;
+		}
+
+		.cart-label {
+			grid-template-columns:  2fr 1fr;
+
+		}
+
+		.cart-product {
+			align-items: normal;
+		}
+
+		.productandquantity {
+			flex-direction: column;
+			gap: 30px;
+			align-items: normal;
+		}
+	}
+
+	@media only screen and (max-width: 500px) {
+		.products-image {
+			height: 150px;
+		}
 }
 
 

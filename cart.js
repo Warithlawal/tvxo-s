@@ -27,7 +27,7 @@ const updateCartPage = () => {
         <p>No product in cart. <a href="products.html">Go to Products</a></p>
       </div>
     `;
-    subtotalElem.textContent = '#0.00'; // Set subtotal to zero
+    subtotalElem.textContent = 'NGN0.00'; // Set subtotal to zero
     return; // Stop further execution since the cart is empty
   }
 
@@ -42,7 +42,7 @@ const updateCartPage = () => {
             </div>
             <div class="cart-content">
               <p>${item.name}</p>
-              <p>#${item.price.toFixed(2)}</p>
+              <p>NGN${item.price.toLocaleString()}</p>
               <p>Size: ${item.size}</p>
             </div>
           </div>
@@ -58,7 +58,7 @@ const updateCartPage = () => {
         </div>
 
         <div class="cart-total align-right">
-          <p>#${(item.price * item.quantity).toFixed(2)}</p>
+          <p>NGN${(item.price * item.quantity).toLocaleString()}</p>
         </div>
       </div>
       <hr>
@@ -71,7 +71,7 @@ const updateCartPage = () => {
   });
 
   // Update the subtotal amount
-  subtotalElem.textContent = `#${subtotal.toFixed(2)}`;
+  subtotalElem.textContent = `NGN${subtotal.toLocaleString()}`;
 
   // Update the cart number
   updateCartNumber();

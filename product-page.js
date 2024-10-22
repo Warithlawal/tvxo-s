@@ -61,7 +61,7 @@ function getProductIdFromUrl() {
 // Function to update the product page with selected product details
 function updateProductPage(product) {
     document.getElementById('product-name').textContent = product.name;
-    document.getElementById('product-price').textContent = `₦${product.price.toLocaleString()}`;
+    document.getElementById('product-price').textContent = `NGN${product.price.toLocaleString()}`;
     document.getElementById('main-product-img').src = product.image1;
 
     const thumbnailContainer = document.getElementById('thumbnail-container');
