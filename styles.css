@@ -232,7 +232,7 @@ nav input {
 .item {
 	width: 300px;
 	height: 100px;
-	letter-spacing: 10px;
+	letter-spacing: 5px;
 	position: absolute;
 	left: 100%; 
 	animation-name: scrollRight;
@@ -245,16 +245,13 @@ nav input {
 }
 
 .item1 {
-	animation-delay: calc(20s / 4 * (4 - 1) * -1);
+	animation-delay: calc(20s / 3 * (3 - 1) * -1);
 }
 .item2 {
-	animation-delay: calc(20s / 4 * (4 - 2) * -1);
+	animation-delay: calc(20s / 3 * (3 - 2) * -1);
 }
 .item3 {
-	animation-delay: calc(20s / 4 * (4 - 3) * -1);
-}
-.item4 {
-	animation-delay: calc(20s / 4 * (4 - 4) * -1);
+	animation-delay: calc(20s / 3 * (3 - 3) * -1);
 }
 
 .slides-container {
