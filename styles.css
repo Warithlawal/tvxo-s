@@ -115,6 +115,11 @@ nav input {
 	outline-color: black;
 }
 
+.menu ul a {
+	text-decoration: none;
+	color: black;
+}
+
 .user {
 	padding-right: 10px;
 }
@@ -155,12 +160,11 @@ nav input {
 
 .shop-now-positioning {
 	position: absolute;
-	bottom: 150px;
+	bottom: 250px;
 	left: 200px;
 	text-decoration: none;
 	color: white;
-	padding: 15px 20px;
-	border-radius: 10px;
+	padding: 12px 26px;
 	background-color: black;
 }
 
@@ -185,73 +189,24 @@ nav input {
   color: black;
 }
 
-
 .flyer {
-	color: grey;
+	margin: 10px 0 30px;
 	text-align: center;
-	padding: 20px 0 ;
-	margin: 20px 0;
 }
 
 .flyer h1 {
-	font-size: 16px;
-	font-family: "Calligraffitti", cursive;
-}
-
-@keyframes bounce {
-	0% {transform:scale(1,1) translateY(0);}
-	10% {transform:scale(1,1) translateY(0);}
-	30% {transform:scale(1,1) translateY(-15px);}
-	50% {transform:scale(1,1) translateY(0);}
-	58% {transform:scale(1,1) translateY(7px);}
-	65% {transform:scale(1,1) translateY(0);}
-	100% {transform:scale(1,1) translateY(0);}
-}
-
-.bounce {
-	animation: bounce 1s ease infinite;
-}
-
-.wrapper {
-	width: 90%;
-	max-width: 14000px;
-	margin-inline: auto;
-	position: relative;
-	height: 50px;
-	margin: 40px auto;
-	overflow: hidden;
-}
-
-@keyframes scrollRight {
-
-	to {
-		left: -300px;
-	}
-}
-
-.item {
-	width: 300px;
-	height: 100px;
-	letter-spacing: 5px;
-	position: absolute;
-	left: 100%; 
-	animation-name: scrollRight;
-	animation-duration: 20s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
+	font-size: 140px;
 	text-align: center;
-	font-size: 20px;
-	font-family: "Moo Lah Lah", sans-serif;
+	padding: 10px 0;
 }
 
-.item1 {
-	animation-delay: calc(20s / 3 * (3 - 1) * -1);
-}
-.item2 {
-	animation-delay: calc(20s / 3 * (3 - 2) * -1);
-}
-.item3 {
-	animation-delay: calc(20s / 3 * (3 - 3) * -1);
+.flyer a {
+	text-decoration: none;
+	color: white;
+	background-color: black;
+	margin: 10px 0;
+	padding: 10px 15px;
+	border-radius: 20px;
 }
 
 .slides-container {
@@ -309,8 +264,6 @@ nav input {
     border: 1px solid black;
 }
 
-
-
 main {
 	margin: 20px 5%;
 }
@@ -319,10 +272,9 @@ main {
 	margin: 40px auto;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 40px;
+	gap: 30px;
 	max-width: 1120px;
 }
-
 
 .home-product-display img {
 	border-radius: 10px;
@@ -370,11 +322,9 @@ main {
 .all-products-btn {
 	display: block;
 	background: none;
-	border-radius: 5px;
 	border: 1px solid black;
-	padding: 10px 20px;
+	padding: 8px 18px;
 	margin: 0 auto;
-	font-size: 18px;
 	text-decoration: none;
 	color: black;
 	max-width: 150px;
@@ -431,10 +381,6 @@ main {
 
 .products-header h1 {
 	text-align: center;
-}
-
-.product-main {
-	
 }
 
 .product-page {
@@ -688,6 +634,12 @@ footer {
 	margin: 10px;
 }
 
+@media (max-width: 950px) {
+	.flyer h1 {
+		font-size: 100px;
+	}
+} 
+
 @media (max-width: 900px) {
 	.product-img-review-container {
 		width: 100%;
@@ -709,47 +661,71 @@ footer {
 	}
 }
 
-	@media only screen and (max-width: 600px) {
-		.align-right {
-			text-align: right;
-			align-items: normal;
-			
-		}
+@media (max-width: 655px) {
+	.flyer h1 {
+		font-size: 80px;
+	}
+} 
 
-		.cart-label .align-left-quantity {
-			display: none;
-		}
-
-		.cart-label {
-			grid-template-columns:  2fr 1fr;
-
-		}
-
-		.cart-product {
-			align-items: normal;
-		}
-
-		.productandquantity {
-			flex-direction: column;
-			gap: 30px;
-			align-items: normal;
-		}
+@media only screen and (max-width: 600px) {
+	.align-right {
+		text-align: right;
+		align-items: normal;
+		
 	}
 
-	@media only screen and (max-width: 500px) {
-		.products-image {
-			height: 150px;
-		}
+	.cart-label .align-left-quantity {
+		display: none;
+	}
+
+	.cart-label {
+		grid-template-columns:  2fr 1fr;
+
+	}
+
+	.cart-product {
+		align-items: normal;
+	}
+
+	.productandquantity {
+		flex-direction: column;
+		gap: 30px;
+		align-items: normal;
+	}
+
+	.products {
+		grid-template-columns: 1fr 1fr; 
+		gap: 20px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.products-image {
+		height: 150px;
+	}
+
+	.flyer h1 {
+		font-size: 40px;
+	}
+
+	.flyer a {
+		padding: 6px 8px;
+		font-size: 14px;
+	}
+
+	.home-product-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 
 @media (max-width: 480px) {
-	.products {
-		grid-template-columns: repeat(2, 1fr); /* Display 2 columns */
+	.shop-now-positioning {
+		bottom: 250px;
+		left: 50px;
 	}
 
-	.shop-now-positioning {
-		bottom: 150px;
-		left: 100px;
+	.home-product-display {
+		height: 200px;
 	}
 }
