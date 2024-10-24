@@ -195,7 +195,7 @@ nav input {
 }
 
 .flyer h1 {
-	font-size: 140px;
+	font-size: 100px;
 	text-align: center;
 	padding: 10px 0;
 }
@@ -345,7 +345,7 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 20px;
-	max-width: 700px;
+	max-width: 850px;
 	margin: 40px auto 30px;
 	text-align: center;
 	align-items: center;
@@ -580,7 +580,7 @@ select {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .cart-cover {
@@ -716,6 +716,10 @@ footer {
 	.home-product-container {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+	.logo-img {
+		width: 110px;
+	}
 }
 
 
@@ -727,5 +731,31 @@ footer {
 
 	.home-product-display {
 		height: 200px;
+	}
+
+	.logo-img {
+		width: 80px;
+	}
+
+	nav input {
+		padding: 8px;
+		width: 40%;
+	}
+
+	.cart-product {
+		gap: 15px;
+	}
+
+	.cart-total {
+		font-size: 13px;
+	}
+
+	.cart-image {
+		width: 120px;
+		height: 120px;
+	}
+
+	.cart-content {
+		font-size: 13px;
 	}
 }

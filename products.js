@@ -5,6 +5,7 @@ const allProducts =  [{
     image2: 'images/Motivated-red2.jpg',
     image3: 'images/Motivated-red3.jpg',
     price: 60000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -15,6 +16,7 @@ const allProducts =  [{
     image3: 'images/Celestial-white3.jpg',
     image4: 'images/Celestial-white4.jpg',
     price: 60000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -25,6 +27,7 @@ const allProducts =  [{
     image3: 'images/Motivated-blue3.jpg',
     image4: 'images/Motivated-blue4.jpg',
     price: 60000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -34,6 +37,7 @@ const allProducts =  [{
     image2: 'images/Celestial-brown1.jpg',
     image3: 'images/Celestial-brown3.jpg',
     price: 60000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -43,6 +47,7 @@ const allProducts =  [{
     image2: 'images/Summercation-black2.jpg',
     image3: 'images/Summercation-black3.jpg',
     price: 55000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -53,6 +58,7 @@ const allProducts =  [{
     image3: 'images/Mmx1.jpg',
     image4: 'images/Mmx4.jpg',
     price: 55000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -63,6 +69,7 @@ const allProducts =  [{
     image3: 'images/Motivated-black3.jpg',
     image4: 'images/Motivated-black1.jpg',
     price: 60000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -73,6 +80,7 @@ const allProducts =  [{
     image3: 'images/Celestial2.jpg',
     image4: 'images/Celestial1.jpg',
     price: 60000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -81,8 +89,8 @@ const allProducts =  [{
     image1: 'images/Beach-shop1.jpg',
     image2: 'images/Beach-shop2.jpg',
     image3: 'images/Beach-shop3.jpg',
-  
     price: 55000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -91,6 +99,7 @@ const allProducts =  [{
     image1: 'images/Tank-top-black2.jpg',
     image2: 'images/Tank-top-black1.jpg',  
     price: 30000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'tank'
   },
   {
@@ -100,6 +109,7 @@ const allProducts =  [{
     image1: 'images/Parsley.jpg',
     image3: 'images/IMG_8216-Edit-2-Edit.jpg',
     price: 130000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'denim'
   },
   {
@@ -109,6 +119,7 @@ const allProducts =  [{
     image2: 'images/Tanktop-1.jpg',
     image3: 'images/Tanktop-1.jpg',
     price: 30000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'tank'
   },
   {
@@ -149,6 +160,7 @@ const allProducts =  [{
     image2: 'images/Summercation1.jpg',
     image3: 'images/Summercation2.jpg',
     price: 60000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -159,6 +171,7 @@ const allProducts =  [{
     image3: 'images/Summercation-white4.jpg',
     image4: 'images/Summercation-white5.jpg',
     price: 55000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -170,6 +183,7 @@ const allProducts =  [{
     image4: 'images/Track-5.jpg',
     image5: 'images/Track-6.jpg',
     price: 110000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'track'
   },
   {
@@ -179,6 +193,7 @@ const allProducts =  [{
     image2: 'images/Beach-club-black2.jpg',
     image3: 'images/Motivate-cap-brown.jpg',
     price: 55000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'shirts'
   },
   {
@@ -189,6 +204,7 @@ const allProducts =  [{
     image3: 'images/Hoodie3.jpg',
     image4: 'images/Hoodie4.jpg',
     price: 65000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'hoodie'
   },
   {
@@ -224,6 +240,7 @@ const allProducts =  [{
     name: 'Joggers',
     image1: 'images/joggers.jpg',
     price: 65000,
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
     category: 'joggers'
   }];
 
@@ -297,13 +314,8 @@ function renderFilteredProducts(category) {
                 section.style.display = 'block';  // Show all sections if 'all' is clicked
             }
         });
-    }
-
-    
+    }   
 }
-
-
-
 
 // Event listener for category buttons
 document.querySelectorAll('.category a').forEach(button => {
