@@ -142,6 +142,7 @@ const allProducts =  [{
     id: 16,
     name: 'TVXO Beanie',
     image1: 'images/Bennie-brown1.jpg',
+    image2: 'images/Bennie-brown2.jpg',
     price: 25000,
     category: 'headwear'
   },
