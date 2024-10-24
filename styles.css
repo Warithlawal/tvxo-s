@@ -195,7 +195,7 @@ nav input {
 }
 
 .flyer h1 {
-	font-size: 100px;
+	font-size: 50px;
 	text-align: center;
 	padding: 10px 0;
 }
@@ -663,7 +663,7 @@ footer {
 
 @media (max-width: 655px) {
 	.flyer h1 {
-		font-size: 80px;
+		font-size: 40px;
 	}
 } 
 
@@ -705,7 +705,7 @@ footer {
 	}
 
 	.flyer h1 {
-		font-size: 40px;
+		font-size: 35px;
 	}
 
 	.flyer a {
