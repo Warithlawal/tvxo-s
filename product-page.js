@@ -117,5 +117,6 @@ function displayCartMessage(message) {
     setTimeout(() => {
         messageElem.style.display = 'none';
     }, 3000);
+    updateCartNumber();
 }
   updateCartNumber(); // Update cart number in the header or wherever displayed
