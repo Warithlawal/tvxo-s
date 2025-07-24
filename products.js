@@ -76,4 +76,14 @@ function setupCategoryFilters() {
 }
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("toggleCategory");
+  const categoryList = document.getElementById("categoryList");
+
+  toggleBtn.addEventListener("click", () => {
+   categoryList.classList.toggle("show");
+  toggleBtn.classList.toggle("active");
+  });
+});
+
 
