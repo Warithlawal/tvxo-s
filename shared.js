@@ -8,6 +8,12 @@ function updateCartNumber() {
   });
 }
 
+// Run when DOM is fully loaded (safer than window.load)
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartNumber(); // ✅ Make sure this runs on all pages
+});
+
+// Optional loader logic (only if you're using a page loader)
 window.addEventListener("load", () => {
   const loader = document.getElementById("page-loader");
   if (loader) {
@@ -15,4 +21,3 @@ window.addEventListener("load", () => {
     setTimeout(() => loader.style.display = "none", 300);
   }
 });
-
