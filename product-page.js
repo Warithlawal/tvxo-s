@@ -1,122 +1,129 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const productId = getProductIdFromUrl();
-    const selectedProduct = allProducts.find(product => product.id === productId);
+import { db } from './firebase.js';
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    if (selectedProduct) {
-        updateProductPage(selectedProduct);
+// Get product ID from URL
+const params = new URLSearchParams(window.location.search);
+const productId = params.get('id');
 
-        // Initialize quantity
-        const quantityElem = document.getElementById('quantity');
-        let quantity = parseInt(quantityElem.textContent, 10); // Initialize quantity based on the element's text content
-        const unitPrice = selectedProduct.price; // Assuming price is available on the selected product
+// DOM elements
+const nameEl = document.getElementById('productName');
+const priceEl = document.getElementById('productPrice');
+const mainImageEl = document.getElementById('mainImage');
+const hoverImageEl = document.getElementById('hoverImage');
+const sizeListEl = document.getElementById('sizeList');
+const decreaseBtn = document.querySelector('.decrease');
+const increaseBtn = document.querySelector('.increase');
+const countEl = document.querySelector('.count');
+const addToCartBtn = document.querySelector('.product-btn');
 
-        const increaseButton = document.querySelector('.add'); // "+" button
-        const decreaseButton = document.querySelector('.sub'); // "-" button
+let quantity = 1;
 
-        // Function to update price based on quantity
-        const updatePrice = () => {
-            const totalPrice = unitPrice * quantity;
-            document.getElementById('product-price').textContent = `₦${totalPrice.toLocaleString()}`; // Update displayed price
-        };
+function updateCount() {
+  countEl.textContent = quantity;
+  decreaseBtn.classList.toggle('disabled', quantity === 1);
+}
 
-        // Event listener for increase button
-        if (increaseButton) {
-            increaseButton.addEventListener('click', () => {
-                quantity += 1;  // Increase quantity
-                quantityElem.textContent = quantity;  // Update the displayed quantity
-                updatePrice();  // Update the price based on new quantity
-            });
-        }
+async function loadProduct() {
+  if (!productId) {
+    nameEl.textContent = "Product not found.";
+    return;
+  }
 
-        // Event listener for decrease button
-        if (decreaseButton) {
-            decreaseButton.addEventListener('click', () => {
-                if (quantity > 1) {  // Ensure quantity doesn't go below 1
-                    quantity -= 1;  // Decrease quantity
-                    quantityElem.textContent = quantity;  // Update the displayed quantity
-                    updatePrice();  // Update the price based on new quantity
-                }
-            });
-        }
+  try {
+    const docRef = doc(db, "products", productId);
+    const docSnap = await getDoc(docRef);
 
-        // Attach event listener to "Add to Cart" button
-        const addToCartButton = document.getElementById('add-to-cart');
-        if (addToCartButton) {
-            addToCartButton.addEventListener('click', () => {
-                // Pass the quantity to the addToCart function
-                addToCart(selectedProduct, quantity);
-            });
-        }
+    if (docSnap.exists()) {
+      const product = docSnap.data();
+
+      nameEl.textContent = product.name;
+      priceEl.textContent = `₦${product.price.toLocaleString()}`;
+      mainImageEl.src = product.image;
+      hoverImageEl.src = product.hoverImage || product.image;
+
+      if (product.sizes && Array.isArray(product.sizes)) {
+        sizeListEl.innerHTML = '';
+        product.sizes.forEach(size => {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="#">${size}</a>`;
+          sizeListEl.appendChild(li);
+        });
+      }
+
     } else {
-        console.error('Product not found!');
+      nameEl.textContent = "Product not found.";
     }
+
+  } catch (err) {
+    console.error("Failed to load product:", err);
+    nameEl.textContent = "Error loading product.";
+  }
+}
+
+loadProduct();
+updateCount();
+
+// Size selector
+sizeListEl.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') {
+    sizeListEl.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+    e.target.classList.add('active');
+  }
 });
 
-// Function to get the product ID from the URL
-function getProductIdFromUrl() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return parseInt(urlParams.get('id'));
+// Quantity controls
+increaseBtn.addEventListener('click', () => {
+  quantity++;
+  updateCount();
+});
+
+decreaseBtn.addEventListener('click', () => {
+  if (quantity > 1) {
+    quantity--;
+    updateCount();
+  }
+});
+
+addToCartBtn.addEventListener('click', () => {
+  const selectedSize = document.querySelector('.sizes-btn a.active')?.textContent;
+  if (!selectedSize) {
+    showNotification("Please select a size.");
+    return;
+  }
+
+  const cartItem = {
+    id: productId,
+    name: nameEl.textContent,
+    price: parseInt(priceEl.textContent.replace(/[^0-9]/g, '')),
+    image: mainImageEl.src,
+    size: selectedSize,
+    quantity: quantity
+  };
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existingIndex = cart.findIndex(item => item.id === cartItem.id && item.size === cartItem.size);
+
+  if (existingIndex !== -1) {
+    cart[existingIndex].quantity += quantity;
+  } else {
+    cart.push(cartItem);
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  showNotification("Product added to cart");
+  updateCartNumber();
+});
+
+function showNotification(message) {
+  const notification = document.getElementById("notification");
+  notification.textContent = message;
+  notification.classList.remove("hidden");
+  notification.classList.add("show");
+
+  setTimeout(() => {
+    notification.classList.remove("show");
+    notification.classList.add("hidden");
+  }, 2500);
 }
 
-// Function to update the product page with selected product details
-function updateProductPage(product) {
-    document.getElementById('product-name').textContent = product.name;
-    document.getElementById('product-price').textContent = `NGN${product.price.toLocaleString()}`;
-    document.getElementById('main-product-img').src = product.image1;
 
-    const thumbnailContainer = document.getElementById('thumbnail-container');
-    thumbnailContainer.innerHTML = '';
-    const images = [product.image1, product.image2, product.image3, product.image4].filter(Boolean);
-
-    images.forEach(image => {
-        const imgElement = document.createElement('img');
-        imgElement.src = image;
-        imgElement.alt = product.name;
-        imgElement.addEventListener('click', () => {
-            document.getElementById('main-product-img').src = image;
-        });
-        thumbnailContainer.appendChild(imgElement);
-    });
-}
-
-// Function to add the selected product to the cart
-function addToCart(product, quantity) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Check if the product already exists in the cart
-    const existingProduct = cart.find(item => item.id === product.id);
-
-    if (existingProduct) {
-        // If the product exists, increase its quantity by the amount added
-        existingProduct.quantity += quantity;
-    } else {
-        // If the product does not exist, add it to the cart with the specified quantity
-        cart.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            image: product.image1, // Use the main image for the cart
-            quantity: quantity,
-        });
-    }
-
-    // Save the updated cart back to localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Show message in the DOM
-    displayCartMessage('Item added to cart successfully!');
-}
-
-// Function to display the message
-function displayCartMessage(message) {
-    const messageElem = document.getElementById('cart-message');
-    messageElem.textContent = message;   // Set the message text
-    messageElem.style.display = 'block'; // Show the message
-    
-    // Optional: Hide the message after 3 seconds
-    setTimeout(() => {
-        messageElem.style.display = 'none';
-    }, 3000);
-    updateCartNumber();
-}
-  updateCartNumber(); // Update cart number in the header or wherever displayed

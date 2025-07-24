@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TVXO - Store</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/127aef0c53.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+    href="/css/app-wa-462758aa1e172f82d39e1ea35e919e0a.css?vsn=d">
+  <link
+    rel="stylesheet"
+    href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+
+  <link
+    rel="stylesheet"
+    href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
+
+  <link
+    rel="stylesheet"
+    href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
+
+  <link
+    rel="stylesheet"
+    href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+
+  <link
+    rel="stylesheet"
+    href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+
+  <link
+    rel="stylesheet"
+    href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+</head>
+
+<body>
+	<div id="page-loader" class="page-loader">
+  <div class="spinner"></div>
+</div>
+
+	<nav>
+		<div class="logo">
+			<a href="index.html"><img class="logo-img" src="images/tvxo.png"></a>
+		</div>
+
+		<div class="home">
+				<a class="cart" href="cart.html"><i class="fa-light fa-bag-shopping"></i></a>
+			<p class="cart-number">0</p>
+
+		</div>
+	</nav>
+
+	<section class="product-page-container">
+	  <div class="product-page-image">
+	    <img id="mainImage" src="" class="main-image">
+	    <img id="hoverImage" src="" class="hover-image">
+	  </div>
+
+	  <div class="product-page-details">
+	    <h1 id="productName">Loading...</h1>
+	    <p class="product-page-price" id="productPrice">₦0</p>
+	    
+	    <p class="product-page-quantity">Quantity:</p>
+	    <div class="quantity-btn">
+	      <span class="decrease">-</span>
+	      <span class="count">1</span>
+	      <span class="increase">+</span>
+	    </div>
+
+	    <div class="sizes-btn">
+			  <ul id="sizeList">
+			    <!-- JS will insert sizes here -->
+			  </ul>
+			</div>
+
+
+	    <button class="product-btn">Add to cart <i class="fa-solid fa-right-long"></i></button>
+	  </div>
+	</section>
+
+
+	<section class="you-may-like-section">
+		<h2>You may also like</h2>
+		<div class="you-may-like-container">
+			<div class="you-may-like-card">
+				<div class="you-may-like-image">
+					<img src="images/2.png" class="main-image">
+					<img src="images/1.png" class="hover-image">
+				</div>
+				<div class="you-may-like-details">
+					<p class="you-may-like-name">TVXO BEACH CLUB</p>
+					<p class="you-may-like-price">#300,000</p>
+				</div>
+			</div>
+
+			<div class="you-may-like-card">
+				<div class="you-may-like-image">
+					<img src="images/2.png" class="main-image">
+					<img src="images/1.png" class="hover-image">
+				</div>
+				<div class="you-may-like-details">
+					<p class="you-may-like-name">TVXO BEACH CLUB</p>
+					<p class="you-may-like-price">#300,000</p>
+				</div>
+			</div>
+
+			<div class="you-may-like-card">
+				<div class="you-may-like-image">
+					<img src="images/2.png" class="main-image">
+					<img src="images/1.png" class="hover-image">
+				</div>
+				<div class="you-may-like-details">
+					<p class="you-may-like-name">TVXO BEACH CLUB</p>
+					<p class="you-may-like-price">#300,000</p>
+				</div>
+			</div>
+
+			<div class="you-may-like-card">
+				<div class="you-may-like-image">
+					<img src="images/2.png" class="main-image">
+					<img src="images/1.png" class="hover-image">
+				</div>
+				<div class="you-may-like-details">
+					<p class="you-may-like-name">TVXO BEACH CLUB</p>
+					<p class="you-may-like-price">#300,000</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		
+	</footer>
+	<div id="notification" class="hidden">Product added to cart</div>
+
+	<script type="module" src="firebase.js"></script>
+  <script type="module" src="product-page.js"></script>
+  <script src="shared.js"></script>
+</body>
+</html>

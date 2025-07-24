@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>TVXO - Store</title>
+	<title>TVXO - Checkout</title>
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://kit.fontawesome.com/127aef0c53.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,42 +60,52 @@
 		</div>
 	</nav>
 
-	<section class="cart-section">
-      <div class="cart-header">
-         <h1>YOUR CART</h1>
-         <a href="products.html">Continue shopping</a>
-     </div>
+	<div class="checkout-layout ll">
+  <!-- Left: Form -->
+  <div class="checkout-form">
+    <h2>Shipping Details</h2>
 
-     <div class="cart-label">
-       <div class="productandquantitylabel">
-         <p>Products</p>
-         <p class="align-left-quantity">Quantity</p>
-       </div>
-       <p class="align-right">Total</p>
-     </div>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" placeholder="Your name" />
 
-     <hr>
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="you@example.com" />
 
-     <div id="cart-container">
-     </div>
+    <label for="address">Address</label>
+    <input type="text" id="address" placeholder="123 Street Name" />
 
-    <div class="subtotal-sec">
-     <div class="subtotal-amount">
-       <h3>Subtotal</h3> 
-       <p class="subtotal-price">₦0.00</p>
-     </div>
-     <a href="checkout.html" class="checkout-button" id="checkoutBtn">Checkout</a>
+    <label for="deliveryArea">Select Delivery Area</label>
+    <select id="deliveryArea" required>
+      <option value="">-- Select Area --</option>
+      <option value="Lekki">Lekki</option>
+      <option value="Ikeja">Ikeja</option>
+      <option value="Ajah">Ajah</option>
+      <option value="Surulere">Surulere</option>
+    </select>
 
-   </div>
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" placeholder="08012345678" />
 
-   </section>
+    <div class="checkout-btns">
+      <button>Pay Now</button>
+    </div>
+  </div>
 
-   <div id="toast" class="toast hidden"></div>
+  <!-- Right: Cart Summary -->
+  <div class="checkout-summary rr">
+    <h2>Your Item(s)</h2>
 
- 
+    <div id="summaryItems"></div>
 
-	<script src="cart.js" type="module"></script>
-	<script src="shared.js"></script>
+    <p>Subtotal: <span id="subtotalDisplay">₦0</span></p>
+    <p>Delivery Fee: <span id="deliveryFeeDisplay">-</span></p>
+    <div class="total-display">Total: <span id="grandTotal">₦0</span></div>
+  </div>
+</div>
+
+  <script src="shared.js"></script>
+  <script src="checkout.js"></script>
 
 </body>
+
 </html>
