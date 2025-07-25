@@ -100,7 +100,7 @@ document.getElementById("checkoutBtn").addEventListener("click", function (e) {
 
   if (cart.length === 0) {
     e.preventDefault(); // stop going to checkout page
-    showToast("🛒 Add products to cart first.");
+    showToast("Add products to cart first.");
   }
 });
 

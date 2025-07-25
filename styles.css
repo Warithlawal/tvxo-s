@@ -187,8 +187,8 @@ nav {
 
 #categoryListHome {
   position: absolute;
-  top: 100%; /* directly under "Categories" link */
-  left: -10px;
+  top: 100%;
+  left: -15px;
   width: max-content;
   max-height: 0;
   overflow: hidden;
@@ -205,7 +205,7 @@ nav {
 }
 
 #categoryListHome li {
-  padding: 6px 20px;
+  padding: 6px 15px;
   list-style: none;
   font-size: 14px;
   white-space: nowrap;
@@ -862,7 +862,7 @@ nav {
 .checkout-summary .item {
   display: flex;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
 }
@@ -881,6 +881,7 @@ nav {
 .checkout-summary .details p {
   margin: 4px 0;
   font-size: 15px;
+  text-transform: uppercase;
 }
 
 .total-display {
@@ -969,10 +970,10 @@ nav {
     left: -100%;
     width: 300px;
     height: 100vh;
-    padding: 50px 20px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     z-index: 9999;
     transition: left 0.3s ease-in-out;
   }
@@ -1021,7 +1022,7 @@ nav {
   }
 
   #categoryListHome.show {
-    max-height: 450px;
+    max-height: 420px;
     opacity: 1;
     padding: 10px 0;
   }
@@ -1075,6 +1076,36 @@ nav {
   .category-list.show {
     display: flex;
   }
+
+  .checkout-form h2,
+	.checkout-summary h2 {
+	  margin-bottom: 10px;
+	  font-size: 20px;
+	}
+
+	.checkout-form label {
+	  font-weight: 300;
+	  margin-top: 5px;
+	}
+
+  .checkout-summary .details p {
+	  font-size: 14px;
+	}
+
+	.checkout-form {
+	  gap: 10px;
+	}
+
+	.checkout-form h2,
+	.checkout-summary h2 {
+	  margin-bottom: 15px;
+	}
+
+	.checkout-form input,
+	.checkout-form select {
+	  border: 0.5px solid #ccc;
+	  font-size: 14px;
+	}
 }
 
 @media only screen and (max-width :750px) {
