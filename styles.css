@@ -1021,7 +1021,7 @@ nav {
   }
 
   #categoryListHome.show {
-    max-height: 400px;
+    max-height: 450px;
     opacity: 1;
     padding: 10px 0;
   }
