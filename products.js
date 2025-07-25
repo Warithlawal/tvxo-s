@@ -4,11 +4,15 @@ import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/
 let allProducts = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadProducts();
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedCategory = urlParams.get("category");
+
+  loadProducts(selectedCategory);
   setupCategoryFilters();
+  setupToggleCategory();
 });
 
-function loadProducts() {
+function loadProducts(selectedCategory = null) {
   const productsRef = collection(db, "products");
 
   getDocs(productsRef)
@@ -18,7 +22,16 @@ function loadProducts() {
         const data = doc.data();
         allProducts.push({ ...data, id: doc.id });
       });
-      displayProducts(allProducts); // Show all by default
+
+      // If a category was passed in URL, filter it
+      if (selectedCategory) {
+        const filtered = allProducts.filter(p =>
+          p.category?.toLowerCase() === selectedCategory.toLowerCase()
+        );
+        displayProducts(filtered);
+      } else {
+        displayProducts(allProducts); // Show all by default
+      }
     })
     .catch(error => console.error("Error loading products:", error));
 }
@@ -51,6 +64,7 @@ function displayProducts(products) {
     container.appendChild(card);
   });
 }
+
 function setupCategoryFilters() {
   const categoryLinks = document.querySelectorAll(".category-list a");
 
@@ -68,22 +82,27 @@ function setupCategoryFilters() {
       if (category === "All") {
         displayProducts(allProducts);
       } else {
-        const filtered = allProducts.filter(p => p.category?.toLowerCase() === category.toLowerCase());
+        const filtered = allProducts.filter(p =>
+          p.category?.toLowerCase() === category.toLowerCase()
+        );
         displayProducts(filtered);
       }
+
+      // Optionally update URL without reload
+      const newUrl = category === "All" ? "products.html" : `products.html?category=${category}`;
+      window.history.pushState({}, "", newUrl);
     });
   });
 }
 
-
-document.addEventListener("DOMContentLoaded", () => {
+function setupToggleCategory() {
   const toggleBtn = document.getElementById("toggleCategory");
   const categoryList = document.getElementById("categoryList");
 
-  toggleBtn.addEventListener("click", () => {
-   categoryList.classList.toggle("show");
-  toggleBtn.classList.toggle("active");
-  });
-});
-
-
+  if (toggleBtn && categoryList) {
+    toggleBtn.addEventListener("click", () => {
+      categoryList.classList.toggle("show");
+      toggleBtn.classList.toggle("active");
+    });
+  }
+}
