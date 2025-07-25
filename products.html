@@ -49,15 +49,37 @@
 </div>
 
 	<nav>
-		<div class="logo">
-			<a href="index.html"><img class="logo-img" src="images/tvxo.png"></a>
+	  <div class="logo">
+	    <a href="index.html"><img class="logo-img" src="images/tvxo.png"></a>
+
+			<div class="mobile-menu" id="mobileMenu">
+		    <ul id="navLinks" class="hidden">
+		    	<i class="fa-thin fa-times" id="closeMenu"></i>
+		      <li>
+		        <a href="#" id="toggleCategories">
+		          categories <span id="toggleIcon">+</span>
+		        </a>
+		        <ul id="categoryListHome" class="category-hidden">
+					    <li><a href="#" data-category="Shirts">Shirts</a></li>
+					    <li><a href="#" data-category="Jackets">Jackets</a></li>
+					    <li><a href="#" data-category="Headwears">Headwears</a></li>
+					    <li><a href="#" data-category="Trousers">Trousers</a></li>
+					    <li><a href="#" data-category="Slides">Slides</a></li>
+					    <li><a href="#" data-category="Socks">Socks</a></li>
+					    <li><a href="#" data-category="Tanks">Tanks</a></li>
+					    <li><a href="#" data-category="Hoodies">Hoodies</a></li>
+					  </ul>
+		      </li>
+		      <li><a href="products.html">all products</a></li>
+		    </ul>
+		  </div>
 		</div>
 
-		<div class="home">
-				<a class="cart" href="cart.html"><i class="fa-light fa-bag-shopping"></i></a>
-			<p class="cart-number">0</p>
-
-		</div>
+	  <div class="home">
+	  	<i class="fa-thin fa-bars menu-toggle" id="menuToggle"></i>
+	    <a class="cart" href="cart.html"><i class="fa-light fa-bag-shopping"></i></a>
+	    <p class="cart-number">0</p>
+	  </div>
 	</nav>
 
 	<section class="catandpro-section">
